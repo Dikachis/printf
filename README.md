@@ -31,7 +31,7 @@ This is a rebuild of the standard printf Function in C program. This project is 
 * va_arg (man 3 va_arg)
 
 ### Specifier & examples:
-|:---Specifier---|:--------------Output-------------:|:----  Examples----:|
+|Specifier	 |	Output			     |	     Examples     |
 |:--------------:|:----------------------------------|:-------------------|
 |c 	         |         Character 	             |     y              |
 |d or i         	|Signed integer 	|       1024, -1024|
@@ -47,7 +47,7 @@ This is a rebuild of the standard printf Function in C program. This project is 
 |R 	|  ROT13 Translation of string 	  |   Uryyb     |
 
 ### Flags (In development...)
-|:---Flags---|:--------------Description-------------:|
+|	Flags	 |		Description	      |
 |:--------------:|:-----------------------------------|
 |- 	|  Left-justify the output within the field width that was given; Right justification is the default (see width sub-specifier). |
 |+ 	|  Preceeds the result with a plus or minus sign (+ or -) even for positive numbers. By default, only negative numbers are preceded with a - sign. |
@@ -56,19 +56,19 @@ This is a rebuild of the standard printf Function in C program. This project is 
 | 0     |	Left-pads the number with zeroes (0) instead of spaces when padding is specified (see width sub-specifier).  |
 
 ### Width (In development...)
-|:---Width---|:--------------Description-------------:|
+|	Width	|			Description		|
 |:--------------:|:-----------------------------------|
 |(number) 	 |Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger. |
 |* 	|   The width is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.  |
 
 ### Precision (In development...)
-|:---.Precision---|:--------------Description-------------:|
+|   .Precision   |	Description		      |
 |:--------------:|:-----------------------------------|
 |.(number) 	|  For integer specifiers (d, i, o, u, x, X): precision specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A precision of 0 means that no character is written for the value 0. For s: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered. If the period is specified without an explicit value for precision, 0 is assumed.  |
 
 ### Lenght modifiers (In development...)
-|:---Modifier/Specifier---:|:-----d & i-----:|:----u, o, x, X----:|:---c---:|:---s---:|:---p---:|
-|:--------------:|:--------|-------------|---------|--------|-----------|
+|   Modifier/Specifier  |  d & i  |  u, o, x, X  |  c   |   s   |   p   |
+|:--------------:|:--------:|:-------------:|:---------:|:--------:|:-----------:|
 |none 	|  int 	|  unsigned int |  int  |    char pointer  | 	void pointer  |
 |h 	|short int | unsigned short int|    |      |     | 			
 |l 	|long int  |	unsigned long int   |      |	 |       |
@@ -91,7 +91,7 @@ This is a rebuild of the standard printf Function in C program. This project is 
 [] Handle the 0 flag character for non-custom conversion specifiers.
 [] Handle the custom conversion specifier r that prints the reversed string.
 [] Handle the custom conversion specifier R that prints the rot13'ed string.
-[]All above options should work well together.
+[] All above options should work well together.
 
 ## List of files and description:
 | S/N   |       files          |        Description  |
