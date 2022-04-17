@@ -1,39 +1,106 @@
 # 0x11. C - printf 
-
 This is a team project work from ALX to create a customized printf
-
 ## About the project
+This is a rebuild of the standard printf Function in C program. This project is a teamwork as part of our study of C program knowledge in cohort 5 of [ALX Software Engineering Program](https://www.alxafrica.com/software-engineering-2022) that started in the month of Febuary 14th, 2022.
 
-This is a rebuild of the standard printf Function in C program. This project is a teamwork as part of our study of C program in the 2022 cohort of ALX Software Engineering Program.
+## printf example:
+| Data types     |   Std_Input format                |     Std_output     |
+|:--------------:|:----------------------------------|:-------------------|
+|  String        | _printf("%s\n", 'This is a string.');| This is a string.|
+|  character	 | _printf("The first letter in the alphabet is %c\n", 'A');| The first letter in the alphabet is A|
+|  Integer	 | _printf("There are %i dozens in a gross\n", 12);| There are 12 dozens in a gross|
+|  Decimal	 | _printf("%d\n", 1000);      | 1000|
+|  Floating point| _printf("number1 = %f\n", 13.5);  | number1 = 13.5|
 
-## Project Requirements:
+## Project Requirements
+* Allowed editors: **vi**, **vim**, **emacs**
+* All files is compiled on **Ubuntu 20.04 LTS using gcc**, using the options **-Wall -Werror -Wextra -pedantic -std=gnu89**
+* All files ends with a new line
+* There is a **README.md** file, at the root of the folder of the project
+* Codes are compiled using the **Betty style**
+* The only C standard library functions allowed are **malloc**, **free** and **exit**.
+* The prototypes of all your functions should be included in your header file called **main.h**
+* All header files were include guarded
+## Authorized functions and macros
+* write (man 2 write)
+* malloc (man 3 malloc)
+* free (man 3 free)
+* va_start (man 3 va_start)
+* va_end (man 3 va_end)
+* va_copy (man 3 va_copy)
+* va_arg (man 3 va_arg)
 
-* Allowed editors: vi, vim, emacs
+### Specifier & examples:
+|:---Specifier---|:--------------Output-------------:|:----  Examples----:|
+|:--------------:|:----------------------------------|:-------------------|
+|c 	         |         Character 	             |     y              |
+|d or i         	|Signed integer 	|       1024, -1024|
+|s 	      |String of characters                  |    Hello Alx |
+|b 	|  Binary Representation of unsigned integer   | 	01010110          |
+|u 	|  Unsigned integer 	  |   1024   |
+|o 	|  Unsigned octal 	  |   432    |
+|x 	|  Unsigned hexadecimal integer  |	3ca   |
+|X 	|  Unsigned hexadecimal integer (uppercase)   |  	3CA  |
+|S 	|  String with hex-ascii value replacing special chars 	 |     \x0A\x0A   |
+|p 	|  Pointer address 	  |        0x403212   |
+|r 	|  Reversed string of characters 	|   dlroW olleH    |
+|R 	|  ROT13 Translation of string 	  |   Uryyb     |
 
-* All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
+### Flags (In development...)
+|:---Flags---|:--------------Description-------------:|
+|:--------------:|:-----------------------------------|
+|- 	|  Left-justify the output within the field width that was given; Right justification is the default (see width sub-specifier). |
+|+ 	|  Preceeds the result with a plus or minus sign (+ or -) even for positive numbers. By default, only negative numbers are preceded with a - sign. |
+|(space) |	If no sign is going to be written, a blank space is inserted before the value. |
+|# 	|  Used with o, x or X specifiers the value is preceeded with 0, 0x or 0X respectively for values different than zero.  |
+| 0     |	Left-pads the number with zeroes (0) instead of spaces when padding is specified (see width sub-specifier).  |
 
-```bash 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89
-```
+### Width (In development...)
+|:---Width---|:--------------Description-------------:|
+|:--------------:|:-----------------------------------|
+|(number) 	 |Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger. |
+|* 	|   The width is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.  |
 
-* All your files should end with a new line
-A README.md file, at the root of the folder of the project is mandatory
+### Precision (In development...)
+|:---.Precision---|:--------------Description-------------:|
+|:--------------:|:-----------------------------------|
+|.(number) 	|  For integer specifiers (d, i, o, u, x, X): precision specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A precision of 0 means that no character is written for the value 0. For s: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered. If the period is specified without an explicit value for precision, 0 is assumed.  |
 
-* Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
+### Lenght modifiers (In development...)
+|:---Modifier/Specifier---:|:-----d & i-----:|:----u, o, x, X----:|:---c---:|:---s---:|:---p---:|
+|:--------------:|:--------|-------------|---------|--------|-----------|
+|none 	|  int 	|  unsigned int |  int  |    char pointer  | 	void pointer  |
+|h 	|short int | unsigned short int|    |      |     | 			
+|l 	|long int  |	unsigned long int   |      |	 |       |
 
-* You are not allowed to use global variables
-* No more than 5 functions per file
-* In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples
-* The prototypes of all your functions should be included in your header file called main.h
-* Don’t forget to push your header file
-* All your header files should be include guarded
-* Note that we will not provide the _putchar function for this project
+## Mandatory Tasks
+[x] Write function that produces output with conversion specifiers c, s, and %.
+[x] Handle conversion specifiers d, i.
+[x] Create a man page for your function.
+
+## Advanced Tasks
+[] Handle conversion specifier b.
+[] Handle conversion specifiers u, o, x, X.
+[] Use a local buffer of 1024 chars in order to call write as little as possible.
+[] Handle conversion specifier S.
+[] Handle conversion specifier p.
+[] Handle flag characters +, space, and # for non-custom conversion specifiers.
+[] Handle length modifiers l and h for non-custom conversion specifiers.
+[] Handle the field width for non-custom conversion specifiers.
+[] Handle the precision for non-custom conversion specifiers.
+[] Handle the 0 flag character for non-custom conversion specifiers.
+[] Handle the custom conversion specifier r that prints the reversed string.
+[] Handle the custom conversion specifier R that prints the rot13'ed string.
+[]All above options should work well together.
+
+## List of files and description:
+| S/N   |       files          |        Description  |
+|:-----:|:--------------------:|:--------------------|
+|  1.   |		       |		     |
 
 
 ## Authors
-[Onyedikachi Okpara](https://github.com/Dikachis)
-
-[Tijani Mukhtar Akande](https://github.com/tijanimukhtarakande)
+[Onyedikachi Okpara](https://github.com/Dikachis) | [Tijani Mukhtar Akande](https://github.com/tijanimukhtarakande)
 
 
 ## Acknowledgement
