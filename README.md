@@ -78,7 +78,7 @@ This is a rebuild of the standard printf Function in C program. This project is 
 ## Mandatory Tasks
 - [ ] Write function that produces output with conversion specifiers **c**, **s**, and **%**.
 - [ ] Handle conversion specifiers **d**, **i**.
-- [ ] Create a man page for your function.
+- [ ] Create a man page for your function
 
 
 ## Advanced Tasks
