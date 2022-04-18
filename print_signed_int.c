@@ -9,14 +9,14 @@
 int print_i(va_list i)
 {
 	int a[10];
-	int j = 1, m = 1000000000, n, sum = 0, counter = 0;
+	int j = 1, m = 1000000000, n, sum = 0, count = 0;
 
 	n = va_arg(i, int);
 	if (n < 0)
 	{
 		n *= -1;
 		_putchar('-');
-		counter++;
+		count++;
 	}
 	a[0] = n / m;
 
@@ -32,10 +32,10 @@ int print_i(va_list i)
 		if (sum != 0 || j == 9)
 		{
 			_putchar('0' + a[j]);
-			counter++;
+			count++;
 		}
 	}
-	return (counter);
+	return (count);
 }
 
 /**
@@ -43,17 +43,17 @@ int print_i(va_list i)
  * @i: base 10 integer to print
  * Return: number of printed digits
  */
-int print_d(va_list i)
+int print_d(va_list d)
 {
 	int a[10];
-	int j = 1, m = 1000000000, n, sum = 0, counter = 0;
+	int j = 1, m = 1000000000, n, sum = 0, count = 0;
 
 	n = va_arg(i, int);
 	if (n < 0)
 	{
 		n *= -1;
 		_putchar('-');
-		counter++;
+		count++;
 	}
 	a[0] = n / m;
 
@@ -69,8 +69,8 @@ int print_d(va_list i)
 		if (sum != 0 || j == 9)
 		{
 			_putchar('0' + a[j]);
-			counter++;
+			count++;
 		}
 	}
-	return (counter);
+	return (count);
 }
