@@ -1,90 +1,76 @@
 #include "main.h"
+#include <stdlib.h>
+
 /**
- * printf_int - prints integer
- * @args: argument to print
- * Return: number of characters printed
+ * print_d - A function that prints a decimal base 10
+ * @i: base 10 integer to print
+ * Return: number of printed digits
  */
-int printf_int(va_list args)
+int print_d(va_list d)
 {
-	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp = 1;
-	int  i = 1;
+	int a[10];
+	int j = 1, m = 1000000000, n, sum = 0, counter = 0;
 
-	n = n / 10;
-	num = n;
-
-	if (last < 0)
+	n = va_arg(d, int);
+	if (n < 0)
 	{
+		n *= -1;
 		_putchar('-');
-		num = -num;
-		n = -n;
-		last = -last;
-		i++;
+		counter++;
 	}
-	if (num > 0)
-	{
-		while (num / 10 != 0)
-		{
-			exp = exp * 10;
-			num = num / 10;
-		}
-		num = n;
-		while (exp > 0)
-		{
-			digit = num / exp;
-			_putchar(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
-			i++;
-		}
-	}
-	_putchar(last + '0');
+	a[0] = n / m;
 
-	return (i);
+	for (; j < 10; j++)
+	{
+		m /= 10;
+		a[j] = (n / m) % 10;
+	}
+
+	for (j = 0; j < 10; j++)
+	{
+		sum += a[j];
+		if (sum != 0 || j == 9)
+		{
+			_putchar('0' + a[j]);
+			counter++;
+		}
+	}
+	return (counter);
 }
 
 /**
- * printf_dec - prints decimal
- * @args: argument to print
- * Return: number of characters printed
+ * print_i - A function that prints a base 10 integer
+ * @i: integer to print
+ * Return: number of printed digits
  */
-
-int printf_dec(va_list args)
+int print_i(va_list i)
 {
-	int n = va_arg(args, int);
-	int num, last = n % 10, digit;
-	int  i = 1;
-	int exp = 1;
+	int a[10];
+	int j = 1, m = 1000000000, n, sum = 0, counter = 0;
 
-	n = n / 10;
-	num = n;
-
-	if (last < 0)
+	n = va_arg(i, int);
+	if (n < 0)
 	{
+		n *= -1;
 		_putchar('-');
-		num = -num;
-		n = -n;
-		last = -last;
-		i++;
+		counter++;
 	}
-	if (num > 0)
-	{
-		while (num / 10 != 0)
-		{
-			exp = exp * 10;
-			num = num / 10;
-		}
-		num = n;
-		while (exp > 0)
-		{
-			digit = num / exp;
-			_putchar(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
-			i++;
-		}
-	}
-	_putchar(last + '0');
+	a[0] = n / m;
 
-	return (i);
+	for (; j < 10; j++)
+	{
+		m /= 10;
+		a[j] = (n / m) % 10;
+	}
+
+	for (j = 0; j < 10; j++)
+	{
+		sum += a[j];
+		if (sum != 0 || j == 9)
+		{
+			_putchar('0' + a[j]);
+			counter++;
+		}
+	}
+	return (counter);
 }
