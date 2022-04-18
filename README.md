@@ -78,6 +78,7 @@ This is a rebuild of the standard printf Function in C program. This project is 
 - [ ] Handle conversion specifiers **d**, **i**.
 - [ ] Create a man page for your function.
 
+
 ## Advanced Tasks
 - [ ] Handle conversion specifier **b**.
 - [ ] Handle conversion specifiers **u**, **o**, **x**, **X**.
