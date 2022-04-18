@@ -1,76 +1,90 @@
 #include "main.h"
-#include <stdlib.h>
-
 /**
- * print_i - A function that prints a base 10 integer
- * @i: integer to print
- * Return: number of printed digits
+ * printf_int - prints integer
+ * @args: argument to print
+ * Return: number of characters printed
  */
-int print_i(va_list i)
+int printf_int(va_list args)
 {
-	int a[10];
-	int j = 1, m = 1000000000, n, sum = 0, count = 0;
+	int n = va_arg(args, int);
+	int num, last = n % 10, digit, exp = 1;
+	int  i = 1;
 
-	n = va_arg(i, int);
-	if (n < 0)
+	n = n / 10;
+	num = n;
+
+	if (last < 0)
 	{
-		n *= -1;
 		_putchar('-');
-		count++;
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
-	a[0] = n / m;
-
-	for (; j < 10; j++)
+	if (num > 0)
 	{
-		m /= 10;
-		a[j] = (n / m) % 10;
-	}
-
-	for (j = 0; j < 10; j++)
-	{
-		sum += a[j];
-		if (sum != 0 || j == 9)
+		while (num / 10 != 0)
 		{
-			_putchar('0' + a[j]);
-			count++;
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
 		}
 	}
-	return (count);
+	_putchar(last + '0');
+
+	return (i);
 }
 
 /**
- * print_d - A function that prints a decimal base 10
- * @i: base 10 integer to print
- * Return: number of printed digits
+ * printf_dec - prints decimal
+ * @args: argument to print
+ * Return: number of characters printed
  */
-int print_d(va_list d)
+
+int printf_dec(va_list args)
 {
-	int a[10];
-	int j = 1, m = 1000000000, n, sum = 0, count = 0;
+	int n = va_arg(args, int);
+	int num, last = n % 10, digit;
+	int  i = 1;
+	int exp = 1;
 
-	n = va_arg(i, int);
-	if (n < 0)
+	n = n / 10;
+	num = n;
+
+	if (last < 0)
 	{
-		n *= -1;
 		_putchar('-');
-		count++;
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
-	a[0] = n / m;
-
-	for (; j < 10; j++)
+	if (num > 0)
 	{
-		m /= 10;
-		a[j] = (n / m) % 10;
-	}
-
-	for (j = 0; j < 10; j++)
-	{
-		sum += a[j];
-		if (sum != 0 || j == 9)
+		while (num / 10 != 0)
 		{
-			_putchar('0' + a[j]);
-			count++;
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
 		}
 	}
-	return (count);
+	_putchar(last + '0');
+
+	return (i);
 }
