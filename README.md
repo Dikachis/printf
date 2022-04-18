@@ -55,7 +55,7 @@ This is a rebuild of the standard printf Function in C program. This project is 
 |**+** 	|  Preceeds the result with a plus or minus sign **(+ or -)** even for positive numbers. By default, only negative numbers are preceded with a **- sign**. |
 |**(space)** |	If no sign is going to be written, a blank space is inserted before the value. |
 |**#** 	|  Used with **o**, **x** or **X** specifiers the value is preceeded with **0**, **0x** or **0X** respectively for values different than zero.  |
-| **0**     |	Left-pads the number with **zeroes (0)** instead of spaces when padding is specified (see width sub-specifier).  |
+| **0**     |	Left-pads the number with **zeroes (0)** instead of spaces when padding is specified (see width sub-specifier). |
 
 ### Width (In development...)
 |	Width	|			Description		|
