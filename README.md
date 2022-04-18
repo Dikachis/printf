@@ -78,7 +78,7 @@ General format: **_printf("format string", var1, var2, ...);**
 ## Mandatory Tasks
 - [ ] Write function that produces output with conversion specifiers **c**, **s**, and **%**.
 - [ ] Handle conversion specifiers **d**, **i**.
-- [ ] Create a man page for your function.
+- [ ] Create a man page for your function
 
 
 ## Advanced Tasks
