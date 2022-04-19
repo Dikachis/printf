@@ -8,7 +8,6 @@
  * @limit: size of the binary
  * Return: number of chars printed.
  */
-
 char *fill_binary_array(char *binary, long int int_in, int isneg, int limit)
 {
 	int i;
