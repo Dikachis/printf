@@ -8,7 +8,6 @@
  *
  * Return: binary array.
  */
-
 char *fill_long_oct_array(char *bnr, char *oct)
 {
 	int op, i, j, ioct, limit;
